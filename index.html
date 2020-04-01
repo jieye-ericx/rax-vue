@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <p>{{msg}}</p>
+    <p v-text="msg"></p>
+    <p v-html="tag"></p>
+    <input type="text" v-model="msg">
+    <button v-on:click="clickFn">按钮</button>
+</div>
+<script src="src/compile.js"></script>
+<script src="src/vue.js"></script>
+<script>
+	const vm = new Vue({
+		el: '#app',
+		data: {
+			msg: 'hello msg',
+			tag: '<h3>tagHtml</h3>'
+		},
+		methods: {
+			clickFn() {
+				console.log(this.$data.msg)
+			}
+		}
+	})
+</script>
+</body>
+</html>
